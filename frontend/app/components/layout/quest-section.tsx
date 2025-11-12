@@ -1,6 +1,14 @@
 import { useApi } from "~/contexts/api-context";
 import { Button } from "../ui/button";
 import ProblemCard from "../problem/problem-card";
+import {
+    Dialog, DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
+} from "~/components/ui/dialog";
 
 function QuestSection() {
     const { team, status } = useApi();
@@ -18,6 +26,8 @@ function QuestSection() {
                     <ProblemCard key={problem.name} problem={problem} />
                 ))}
             </ul>
+
+
         </section>
     )
 }

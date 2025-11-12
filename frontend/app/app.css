@@ -176,3 +176,23 @@
 @property --13-x-position { syntax: '<percentage>'; inherits: false; initial-value: 72.96875%; }
 
 @property --13-y-position { syntax: '<percentage>'; inherits: false; initial-value: 71.2109375%; }
+
+
+.swim-right {
+    animation: swim-right linear infinite;
+}
+
+.swim-left {
+    animation: swim-left linear infinite;
+}
+
+
+@keyframes swimRight {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(100vw); }
+}
+
+@keyframes swimLeft {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100px); }
+}
