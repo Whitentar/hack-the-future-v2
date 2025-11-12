@@ -1,8 +1,9 @@
 import { Button } from "~/components/ui/button";
 import type { Route } from "./+types/home";
-import { ApiProvider } from "~/contexts/api-context";
+import { ApiProvider, useApi } from "~/contexts/api-context";
 import ProblemBadge from "~/components/problem/problem-badge";
 import ProblemCard from "~/components/problem/problem-card";
+import QuestSection from "~/components/layout/quest-section";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -21,35 +22,7 @@ export default function Home() {
         <p className="px-3 py-1 bg-primary rounded-full w-fit">Score: 14</p>
       </header>
       <main className="px-6">
-        <section className="mt-24 max-w-5xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-semibold mb-4">Quest</h2>
-            <Button>Start Quest</Button>
-          </div>
-          <ul className="grid grid-cols-3 gap-3">
-            <ProblemCard problem={{
-              name: "Water Quality Analysis",
-              description: "Analyze water quality metrics from sensor data",
-              solved: false,
-              badgeUrl: "POLLUTION_CONTROL_BADGE",
-              mission: [] 
-            }} />
-            <ProblemCard problem={{
-              name: "Water Quality Analysis",
-              description: "Analyze water quality metrics from sensor data",
-              solved: false,
-              badgeUrl: "POLLUTION_CONTROL_BADGE",
-              mission: [] 
-            }} />
-            <ProblemCard problem={{
-              name: "Water Quality Analysis",
-              description: "Analyze water quality metrics from sensor data",
-              solved: false,
-              badgeUrl: "POLLUTION_CONTROL_BADGE",
-              mission: [] 
-            }} />
-          </ul>
-        </section>
+        <QuestSection />
       </main>
     </ApiProvider>
   );

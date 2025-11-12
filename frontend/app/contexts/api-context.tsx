@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import type { Team } from "~/types/team.type";
 import { useQuery, type QueryStatus } from "@tanstack/react-query";
 
@@ -22,7 +22,7 @@ export function ApiProvider({ children }: ApiProviderProps) {
     } = useQuery({
         queryKey: ["team"],
         queryFn: async (): Promise<Team> => {
-            const response = await fetch("/api/team");
+            const response = await fetch("http://localhost:8080/api/team");
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
@@ -37,4 +37,12 @@ export function ApiProvider({ children }: ApiProviderProps) {
     };
 
     return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;
+}
+
+export function useApi() {
+    const context = useContext(ApiContext);
+    if (context === undefined) {
+        throw new Error("useApi must be used within an ApiProvider");
+    }
+    return context;
 }

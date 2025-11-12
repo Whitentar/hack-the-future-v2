@@ -8,6 +8,6 @@ public record ProblemDto(
         boolean solved,
         int score,
         String badgeUrl,
-        List<MissionDto> missions
+        List<MissionDto> mission
 ) {
 }
