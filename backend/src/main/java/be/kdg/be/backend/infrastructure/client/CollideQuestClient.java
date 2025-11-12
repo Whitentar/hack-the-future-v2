@@ -5,10 +5,7 @@ import be.kdg.be.backend.infrastructure.client.dto.MissionResultDto;
 import be.kdg.be.backend.infrastructure.client.dto.QuestDto;
 import be.kdg.be.backend.infrastructure.client.dto.QuestResultDto;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -31,7 +28,7 @@ public interface CollideQuestClient {
     QuestResultDto deleteQuestByTeamId(@PathVariable UUID teamId);
 
     @PostMapping("/mission/{missionId}/solution")
-    MissionResultDto submitMissionByMissionId(@PathVariable UUID missionId);
+    MissionResultDto submitMissionByMissionId(@PathVariable UUID missionId, @RequestParam("result") String result);
 
     @GetMapping("/dashboard")
     DashboardDto getDashboard();
