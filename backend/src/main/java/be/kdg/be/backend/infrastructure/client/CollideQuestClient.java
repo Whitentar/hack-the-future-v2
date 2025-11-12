@@ -14,7 +14,8 @@ import java.util.UUID;
 
 @FeignClient(
         name = "collide-backend",
-        url = "${collide-backend.url}"
+        url = "${collide-backend.url}",
+        configuration = be.kdg.be.backend.infrastructure.FeignConfig.class
 )
 public interface CollideQuestClient {
 
