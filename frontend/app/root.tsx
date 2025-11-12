@@ -9,6 +9,8 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
+import AppSidebar from "./components/layout/app-sidebar";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -32,10 +34,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+      <body className="dark">
+        {/* <SidebarProvider> */}
+          {/* <AppSidebar /> */}
+          <main>
+            {/* <SidebarTrigger /> */}
+            {children}
+          </main>
+          <ScrollRestoration />
+          <Scripts />
+        {/* </SidebarProvider> */}
       </body>
     </html>
   );
