@@ -158,7 +158,7 @@
 @keyframes main { 25% {--11-x-position: 15%;--11-y-position: 15%;--12-x-position: 85%;--12-y-position: 80%;--13-x-position: 100%;--13-y-position: 100%;}50% {--11-x-position: 80%;--11-y-position: 15%;--12-x-position: 15%;--12-y-position: 85%;--13-x-position: 20%;--13-y-position: 20%;} }
 
 @utility moving-gradient {
-  background: radial-gradient(100% 100% at var(--11-x-position) var(--11-y-position), #3cc2dd 0%, transparent),radial-gradient(100% 100% at var(--12-x-position) var(--12-y-position), #185691 0%, transparent),radial-gradient(100% 100% at var(--13-x-position) var(--13-y-position), #c60cdf 0%, transparent),#1b253b;
+  background: radial-gradient(100% 100% at var(--11-x-position) var(--11-y-position), #2a8293  0%, transparent),radial-gradient(100% 100% at var(--12-x-position) var(--12-y-position), #0b2741 0%, transparent),radial-gradient(100% 100% at var(--13-x-position) var(--13-y-position), #741381 0%, transparent),#1b253b;
   animation-name: main;
   animation-iteration-count: infinite;
   animation-duration: 50s;
