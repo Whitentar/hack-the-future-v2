@@ -36,8 +36,8 @@ public class QuestRestController {
     }
 
     @PostMapping("/mission/{missionId}/solution")
-    public MissionResultDto submitMission(@PathVariable UUID missionId) {
-        return questService.submitMisionByMissionId(missionId);
+    public MissionResultDto submitMission(@PathVariable UUID missionId, @RequestParam("result") String result) {
+        return questService.submitMisionByMissionId(missionId, result);
     }
 
     @GetMapping("/team")

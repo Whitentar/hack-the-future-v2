@@ -44,11 +44,11 @@ public class QuestService {
         return result;
     }
 
-    public MissionResultDto submitMisionByMissionId(UUID missionId) {
+    public MissionResultDto submitMisionByMissionId(UUID missionId, String result) {
         log.debug("Submitting mission solution for mission {}", missionId);
-        MissionResultDto result = collideQuestClient.submitMissionByMissionId(missionId);
+        MissionResultDto resultDto = collideQuestClient.submitMissionByMissionId(missionId, result);
         log.info("Submitted mission solution for mission {}", missionId);
-        return result;
+        return resultDto;
     }
 
     public TeamDto getTeam() {
