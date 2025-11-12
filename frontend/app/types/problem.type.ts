@@ -5,5 +5,6 @@ export interface Problem {
     description: string;
     solved: boolean;
     badgeUrl: string;
+    score: number;
     mission: Mission[]; 
 }

@@ -3,7 +3,7 @@ package be.kdg.be.backend.infrastructure.client.dto;
 import java.util.UUID;
 
 public record MissionDto(
-        UUID id,
+        String id,
         String name,
         String effect,
         String objective,

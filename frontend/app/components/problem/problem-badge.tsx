@@ -2,8 +2,6 @@ import { BatteryCharging, CircleQuestionMark, Speech, Trash2 } from "lucide-reac
 import { Badge } from "../ui/badge";
 
 function ProblemBadge({url}: {url: string}) {
-    console.log(url);
-
     let color;
     let Icon = () => <CircleQuestionMark />;
     let title = "";
