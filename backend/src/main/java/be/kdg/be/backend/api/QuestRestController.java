@@ -4,7 +4,7 @@ import be.kdg.be.backend.application.QuestService;
 import be.kdg.be.backend.infrastructure.client.dto.MissionResultDto;
 import be.kdg.be.backend.infrastructure.client.dto.QuestDto;
 import be.kdg.be.backend.infrastructure.client.dto.QuestResultDto;
-import org.springframework.beans.factory.annotation.Value;
+import be.kdg.be.backend.infrastructure.client.dto.TeamDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -14,30 +14,33 @@ import java.util.UUID;
 public class QuestRestController {
 
     private final QuestService questService;
-    private final UUID teamId;
 
-    public QuestRestController(QuestService questService, @Value("${team-id}") String teamId) {
+    public QuestRestController(QuestService questService) {
         this.questService = questService;
-        this.teamId = UUID.fromString(teamId);
     }
 
     @PostMapping("/quest")
     public QuestDto createQuest() {
-        return questService.createQuestByTeamId(teamId);
+        return questService.createQuest();
     }
 
     @GetMapping("/quest")
     public QuestDto getQuest() {
-        return questService.getQuestByTeamId(teamId);
+        return questService.getQuest();
     }
 
     @DeleteMapping("/quest")
     public QuestResultDto deleteQuest() {
-        return questService.deleteQuestByTeamId(teamId);
+        return questService.deleteQuest();
     }
 
     @PostMapping("/mission/{missionId}/solution")
     public MissionResultDto submitMission(@PathVariable UUID missionId) {
         return questService.submitMisionByMissionId(missionId);
+    }
+
+    @GetMapping("/team")
+    public TeamDto getTeam() {
+        return questService.getTeam();
     }
 }

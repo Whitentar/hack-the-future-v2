@@ -1,5 +1,6 @@
 package be.kdg.be.backend.infrastructure.client;
 
+import be.kdg.be.backend.infrastructure.client.dto.DashboardDto;
 import be.kdg.be.backend.infrastructure.client.dto.MissionResultDto;
 import be.kdg.be.backend.infrastructure.client.dto.QuestDto;
 import be.kdg.be.backend.infrastructure.client.dto.QuestResultDto;
@@ -30,4 +31,7 @@ public interface CollideQuestClient {
 
     @PostMapping("/mission/{missionId}/solution")
     MissionResultDto submitMissionByMissionId(@PathVariable UUID missionId);
+
+    @GetMapping("/dashboard")
+    DashboardDto getDashboard();
 }
