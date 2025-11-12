@@ -10,7 +10,7 @@ function QuestSection() {
     return (
         <section className="mt-24 max-w-5xl mx-auto">
             <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-semibold mb-4">Quest</h2>
+                <h2 className="text-2xl font-semibold mb-4">Active Quest</h2>
                 <Button>Start Quest</Button>
             </div>
             <ul className="grid grid-cols-3 gap-3">
