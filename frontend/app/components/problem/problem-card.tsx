@@ -8,10 +8,9 @@ interface ProblemCardProps {
 }
 
 function ProblemCard({ problem }: ProblemCardProps) {
-    console.log(problem);
     return (
         <li className="p-4 bg-muted/30 hover:bg-accent/40 transition-colors rounded-lg border border-amber-100/10">
-            <div className="flex justify-between items-center gap-2 pb-2">
+            <div className="flex justify-between items-start gap-2 pb-2">
                 <h3 className="font-semibold">{problem.name}</h3>
                 <ProblemBadge url={problem.badgeUrl} />
             </div>

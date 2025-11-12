@@ -1,7 +1,9 @@
-import { CircleQuestionMark, Trash2 } from "lucide-react";
+import { BatteryCharging, CircleQuestionMark, Speech, Trash2 } from "lucide-react";
 import { Badge } from "../ui/badge";
 
 function ProblemBadge({url}: {url: string}) {
+    console.log(url);
+
     let color;
     let Icon = () => <CircleQuestionMark />;
     let title = "";
@@ -11,6 +13,16 @@ function ProblemBadge({url}: {url: string}) {
             color = "bg-green-500/50";
             Icon = () => <Trash2 />;
             title = "Pollution Control";
+            break;
+        case "COMM_BADGE":
+            color = "bg-blue-500/50";
+            Icon = () => <Speech />;
+            title = "Communications";
+            break;
+        case "ENERGY_BADGE":
+            color = "bg-yellow-500/50";
+            Icon = () => <BatteryCharging />;
+            title = "Energy Management";
             break;
     }
 
